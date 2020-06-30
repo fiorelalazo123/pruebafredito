@@ -13,4 +13,6 @@ Esto es una prueba de pull request con _Fio_
 
 [Link-a-GitHub-de-Fredy] (https://github.com/ByFredx)
 
+![Foto Fio](https://www.instagram.com/p/CAinoDRjNAr/)
+
 > ByFredX
