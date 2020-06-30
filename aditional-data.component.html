@@ -1,0 +1,107 @@
+<section class="modal">
+  <div class="modal-content">
+    <section class="modal-body">
+      <div class="grid">
+        <div class="col text-center">
+          <a-janus-title text="Ayúdanos a conocerte mejor" tipography="thirdtitle-1-medium"></a-janus-title>
+        </div>
+      </div>
+      <div class="grid mt-5">
+        <div class="col text-center">
+          <a-janus-title text="Ingresa los siguientes datos" tipography="sub-1-medium"></a-janus-title>
+        </div>
+      </div>
+      <form class="modal-form" [formGroup]="aditionalDataPresenter.Form">
+        <div class="grid mt-30">
+          <div class="col col-lg">
+            <m-janus-inputgroup-text
+              label="Primer Nombre"
+              formControlName="firstName"
+              maxlength="25"
+              [error]="aditionalDataPresenter.firstName.isInvalid"
+              mortgControlInput [letters]="true" [whitespaces]="true"
+              [lowercase]="true"
+              [errortext]="aditionalDataPresenter.firstName.textError"
+              mortgReactiveForm>
+            </m-janus-inputgroup-text>
+          </div>
+          <div class="col col-lg">
+            <m-janus-inputgroup-text
+              label="Segundo Nombre"
+              formControlName="middleName"
+              maxlength="25"
+              mortgControlInput [letters]="true" [whitespaces]="true"
+              [lowercase]="true"
+              [error]="aditionalDataPresenter.middleName.isInvalid"
+              [errortext]="aditionalDataPresenter.middleName.textError"
+              mortgReactiveForm>
+            </m-janus-inputgroup-text>
+          </div>
+        </div>
+        <div class="grid mt-30">
+          <div class="col col-lg">
+            <m-janus-inputgroup-text
+              label="Apellido Paterno"
+              formControlName="lastName"
+              maxlength="25"
+              mortgControlInput [letters]="true" [whitespaces]="true"
+              [lowercase]="true"
+              [error]="aditionalDataPresenter.lastName.isInvalid"
+              [errortext]="aditionalDataPresenter.lastName.textError"
+              mortgReactiveForm>
+            </m-janus-inputgroup-text>
+          </div>
+          <div class="col col-lg">
+            <m-janus-inputgroup-text
+              label="Apellido Materno"
+              formControlName="motherLastName"
+              maxlength="25"
+              mortgControlInput [letters]="true" [whitespaces]="true"
+              [lowercase]="true"
+              [error]="aditionalDataPresenter.motherLastName.isInvalid"
+              [errortext]="aditionalDataPresenter.motherLastName.textError"
+              mortgReactiveForm>
+            </m-janus-inputgroup-text>
+          </div>
+        </div>
+        <div class="grid mt-30">
+          <div class="col col-lg">
+            <m-janus-inputgroup-mask
+              label="Fecha de Nacimiento"
+              formControlName="birthDate"
+              placeholder="DD/MM/AAAA"
+              mortgControlInput [numbers]="true"
+              maskoptions="date"
+              [error]="aditionalDataPresenter.birthDate.isInvalid"
+              [errortext]="aditionalDataPresenter.birthDate.textError"
+              mortgControlInput [numbers]="true" [character]="['/']"
+              mortgReactiveForm>
+            </m-janus-inputgroup-mask>
+          </div>
+          <div class="col col-lg">
+            <m-janus-inputgroup-select
+              label="Género"
+              [items]="genders"
+              formControlName="gender"
+              [error]="aditionalDataPresenter.gender.isInvalid"
+              [errortext]="aditionalDataPresenter.gender.textError"
+              mortgReactiveForm></m-janus-inputgroup-select>
+          </div>
+        </div>
+        <div class="grid mt-30">
+          <div class="col col-center">
+            <a-janus-button
+              text="Siguiente"
+              color="primary"
+              [spinner]="isLoading"
+              (buttonClicked)="saveData()"
+              [disable]="aditionalDataPresenter.Invalid"
+              size="l">
+            </a-janus-button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</section>
+
